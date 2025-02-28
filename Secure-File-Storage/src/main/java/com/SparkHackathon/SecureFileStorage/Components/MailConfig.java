@@ -24,8 +24,6 @@ public class MailConfig {
         mailSender.setHost("smtp.gmail.com");
 //        mailSender.setPort(587);
         mailSender.setPort(465);
-//        mailSender.setUsername("nilesh29082001@gmail.com");  // Replace with sender's email
-//        mailSender.setPassword("pxnjubwryijjfaoj");  // Replace with App Password
         Map<String, String> gmailCredentials = awsSecretsManagerService.getGmailCredentials();
 
         String username = gmailCredentials.get("username");
