@@ -22,6 +22,7 @@ public class MailConfig {
     public JavaMailSender javaMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost("smtp.gmail.com");
+<<<<<<< HEAD
 //        mailSender.setPort(587);
         mailSender.setPort(465);
         Map<String, String> gmailCredentials = awsSecretsManagerService.getGmailCredentials();
@@ -31,6 +32,11 @@ public class MailConfig {
 
         mailSender.setUsername(username); // Gmail username (email)
         mailSender.setPassword(password);
+=======
+        mailSender.setPort(587);
+        mailSender.setUsername("sender-email");  // Replace with sender's email
+        mailSender.setPassword("sender-app-password");  // Replace with App Password
+>>>>>>> origin/main
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
