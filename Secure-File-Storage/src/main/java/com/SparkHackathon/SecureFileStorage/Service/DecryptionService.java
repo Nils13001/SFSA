@@ -30,8 +30,8 @@ public class DecryptionService {
 
     public void decryptFile(String encryptedFilePath, String decryptedFilePath) throws Exception {
         // Read encrypted AES key & private key from files (For testing, in reality, this will be stored securely)
-        byte[] encryptedAesKey = Base64.getDecoder().decode(Files.readAllBytes(Paths.get("C:\\FTE_Data\\Project Work\\Secure-File-Storage\\encrypted_aes_key.txt")));
-        byte[] privateKeyBytes = Base64.getDecoder().decode(Files.readAllBytes(Paths.get("C:\\FTE_Data\\Project Work\\Secure-File-Storage\\private_key.txt")));
+        byte[] encryptedAesKey = Base64.getDecoder().decode(Files.readAllBytes(Paths.get("C:\\FTE_Data\\Project Work\\SecureFileStorage\\Secure-File-Storage\\encrypted_aes_key.txt")));
+        byte[] privateKeyBytes = Base64.getDecoder().decode(Files.readAllBytes(Paths.get("C:\\FTE_Data\\Project Work\\SecureFileStorage\\Secure-File-Storage\\private_key.txt")));
 
         // Convert private key bytes to PrivateKey object
         KeyFactory keyFactory = KeyFactory.getInstance(RSA_ALGORITHM);

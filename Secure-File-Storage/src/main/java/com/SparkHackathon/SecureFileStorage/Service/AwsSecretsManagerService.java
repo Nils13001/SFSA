@@ -56,4 +56,26 @@ public class AwsSecretsManagerService {
             throw new RuntimeException("Failed to parse AWS credentials from Secrets Manager", e);
         }
     }
+
+    public Map<String, String> getGmailCredentials() {
+        String secretName = "GmailCredentials"; // Name of your secret in Secrets Manager
+
+        GetSecretValueRequest request = GetSecretValueRequest.builder()
+                .secretId(secretName)
+                .build();
+
+        GetSecretValueResponse response = secretsManagerClient.getSecretValue(request);
+
+        try {
+            Map<String, String> secretMap = objectMapper.readValue(response.secretString(), Map.class);
+
+            String username = secretMap.get("username");
+            String password = secretMap.get("password");
+
+            return secretMap;
+
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to parse Gmail credentials from Secrets Manager", e);
+        }
+    }
 }
