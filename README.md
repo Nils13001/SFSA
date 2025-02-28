@@ -4,7 +4,7 @@
 <h3>Features</h3>
 <ul type="square">
 <li>ReactJS + Spring-Boot Project with Maven and TailwindCSS
-<li>AWS services used include S3, IAM and KMS
+<li>AWS services used include S3, IAM and Secrets Manager
 <li>Hybrid Cryptography Employing AES(Fernet), and RSA
 </ul>
 
@@ -24,7 +24,7 @@ For backend, load the Java project and give maven build.
 After that, <a href = "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html"> create an IAM user </a> as it is always advisable to experiment using IAM account rather than Root Account.
 Now as a root user, <a href = "https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html"> create a bucket </a> for storing up your files and 
 provide <a href = "https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-walkthroughs-managing-access-example1.html"> permissions to IAM users</a>. 
-Add necessary credentials/secrets to AWS KMS.
+Add necessary credentials/secrets to AWS Secrets Manager.
 
 <p align="justify"> <b> 3. Project run: </b> First, run the backend code on port 8080 and once it is running, give <code>npm start</code> command in frontend folder; it will start Frontend on port 3000
 
